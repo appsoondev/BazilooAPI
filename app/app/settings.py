@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 	'rest_framework.authtoken',
 	'drf_spectacular',
 	'core',
-
+	'user',
 ]
 
 AUTH_USER_MODEL = 'core.User'
