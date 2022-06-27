@@ -1,0 +1,26 @@
+[flake8]
+ignore =
+    W191,
+    E101,
+    F401,
+    E241,
+    E126,
+
+exclude =
+    migrations,
+    __pycache__,
+    manage.py,
+    settings.py
+
+
+
+
+
+
+
+
+
+
+
+
+
