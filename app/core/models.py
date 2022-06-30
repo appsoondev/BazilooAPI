@@ -7,6 +7,9 @@ from django.contrib.auth.models import (
 	PermissionsMixin,
 )
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
+
+from app import settings
 
 
 class UserManager(BaseUserManager):
@@ -48,3 +51,20 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 	def __str__(self):
 		return self.name
+
+
+class Lead(models.Model):
+	"""Basic Lead model"""
+
+	user = models.ForeignKey(
+		settings.AUTH_USER_MODEL,
+		on_delete=models.CASCADE,
+	)  # the user is the owner of the lead
+
+	fname = models.CharField(max_length=255)
+	lname = models.CharField(max_length=255)
+	email = models.EmailField()
+	phone = PhoneNumberField()
+
+	def __str__(self):
+		return self.email

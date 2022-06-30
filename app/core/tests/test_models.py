@@ -2,8 +2,14 @@
 test for models
 """
 
+from core import models
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+
+
+def create_user(email='testuser@example.com', password='Password'):
+	"""Create and returns a Dummy user for testing purposes."""
+	return get_user_model().objects.create_user(email=email, password=password)
 
 
 class ModelTests(TestCase):
@@ -52,3 +58,16 @@ class ModelTests(TestCase):
 		)
 		self.assertTrue(user.is_superuser)
 		self.assertTrue(user.is_staff)
+
+	def test_create_lead(self):
+		"""Test Creating a Lead is successful"""
+		user = create_user()
+		lead = models.Lead.objects.create(
+			user=user,
+			email='leademail@example.com',
+			phone='0987654321',
+			fname='John',
+			lname='Doe',
+
+		)
+		self.assertEqual(str(lead), lead.email)
