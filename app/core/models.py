@@ -13,7 +13,10 @@ from app import settings
 
 
 class UserManager(BaseUserManager):
-	"""MANAGER for users! """
+	"""
+	The UserManager class is a helper class,
+	that provides a lot of functionality for creating and working with users.
+	"""
 
 	def create_user(self, email, password=None, **extra_fields):
 		"""Create, save and return a new user."""
@@ -65,6 +68,7 @@ class Lead(models.Model):
 	lname = models.CharField(max_length=255)
 	email = models.EmailField()
 	phone = PhoneNumberField()
+	ip = models.GenericIPAddressField(blank=True, null=True)
 
 	def __str__(self):
 		return self.email

@@ -52,4 +52,7 @@ class UserAdmin(BaseUserAdmin):
 	)
 
 
+# Registering the User model with the UserAdmin class.
 admin.site.register(models.User, UserAdmin)
+# Registering the Lead model to the admin site.
+admin.site.register(models.Lead)

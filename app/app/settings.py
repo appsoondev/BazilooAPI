@@ -1,3 +1,4 @@
+# Un commentaire.
 """
 Django settings for app project.
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
 	'phonenumber_field',
 	'drf_spectacular',
 	'core',
+	'lead',
 	'user',
 ]
 

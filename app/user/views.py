@@ -27,5 +27,9 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
 
 	# overwrite the get object for getting only the user authenticated
 	def get_object(self):
+		"""
+		It returns the authenticated user
+		:return: The authenticated user.
+		"""
 		"""retrieving and returns the authenticated user"""
 		return self.request.user

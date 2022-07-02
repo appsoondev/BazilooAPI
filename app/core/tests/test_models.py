@@ -65,7 +65,7 @@ class ModelTests(TestCase):
 		lead = models.Lead.objects.create(
 			user=user,
 			email='leademail@example.com',
-			phone='0987654321',
+			phone='+972541096752',
 			fname='John',
 			lname='Doe',
 
